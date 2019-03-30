@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 
 export default class TaskList extends Component {
   public render() {
     return (
       <View style={styles.container}>
-        <Text>Future Task List</Text>
+        <FlatList
+            data={[{key: 'a'}, {key: 'b'}]}
+            renderItem={({item}) => <Text>{item.key}</Text>} />
       </View>
     );
   }

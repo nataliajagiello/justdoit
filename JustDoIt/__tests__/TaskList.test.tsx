@@ -26,6 +26,10 @@ describe('TaskList', () => {
     it('should render a <View />', () => {
       expect(wrapper.find('View')).toHaveLength(1);
     });
+
+    it('should render a <FlatList />', () => {
+        expect(wrapper.find('FlatList')).toHaveLength(1);
+      });
     
   });
 });

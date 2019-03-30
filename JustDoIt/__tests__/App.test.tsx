@@ -7,15 +7,12 @@ import App from '../App';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
+import TaskList from '../src/components/TaskList'
 
-const createTestProps = (props: object) => ({
-  ...props
-});
 configure({ adapter: new Adapter() });
 
 describe('App', () => {
-  const props = createTestProps({});
-  const wrapper = shallow<App>(<App {...props} />);
+  const wrapper = shallow<App>(<App/>);
                                
   describe('rendering', () => {
 
@@ -23,8 +20,8 @@ describe('App', () => {
       renderer.create(<App />);
     });    
 
-    it('should render a <View />', () => {
-      expect(wrapper.find('View')).toHaveLength(1);
+    it('should render a <TaskList/>', () => {
+      expect(wrapper.find(TaskList)).toHaveLength(1);
     });
     
   });

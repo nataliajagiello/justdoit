@@ -57,7 +57,10 @@ public addTask = async () => {
             />
           </View>
           <View style={styles.addButton}>
-            <Button title="Add" onPress={this.addTask} accessibilityLabel="Add task button"/>
+            <Button title="Add" 
+              onPress={this.addTask} 
+              accessibilityLabel="Add task button"
+              disabled={this.state.newTask === ''}/>
           </View>
         </View>
       </View>

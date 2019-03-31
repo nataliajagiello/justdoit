@@ -5,6 +5,8 @@ interface Props {
     id: number;
     name: string;
     isChecked: boolean;
+    onChange: (id: number) => void;
+    onDelete: (id: number) => void;
 }
 
 export default class Task extends Component<Props> {
@@ -19,10 +21,11 @@ export default class Task extends Component<Props> {
     this.setState({
       isChecked : !this.state.isChecked
     })
+    this.props.onChange(this.state.id);
   }
 
   public delete = () => {
-    return;
+    this.props.onDelete(this.state.id);
   }
 
   public render() {
